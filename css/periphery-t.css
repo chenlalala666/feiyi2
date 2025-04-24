@@ -1,0 +1,173 @@
+body {
+    background-color: var(--body-deep-bg);
+}
+
+.fill-top {
+    height: 55px;
+}
+
+.type-area {
+    width: 1196px;
+}
+
+.header {
+    margin-top: 40px;
+}
+
+.header .sub {
+    font-family: "popins-b";
+    color: #BB2749;
+    font-size: 18px;
+    line-height: 29px;
+}
+
+.header .title {
+    font-family: "ssans-b";
+    font-size: 32px;
+    line-height: 43px;
+    margin-top: 2px;
+}
+
+/* 商品 */
+.main {
+    width: 100%;
+    height: 590px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--body-bg);
+    box-shadow: 1px 1px 50px rgba(0, 0, 0, .15);
+    margin-top: 25px;
+}
+
+.main>div {
+    float: left;
+    height: 100%;
+}
+
+.main .img {
+    width: 49%;
+    position: relative;
+    background-color: #F2F2F2;
+}
+
+.main .img img {
+    position: absolute;
+    height: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.main .intro {
+    width: 51%;
+    position: relative;
+}
+
+.main .intro>* {
+    margin-left: 48px;
+}
+
+.main .info {
+    width: 78%;
+    margin-top: 72px;
+
+}
+
+.main .info .title {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: "ssans-b";
+}
+
+.main .info .sub {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 19px;
+    color: #8F8F8F;
+}
+
+.main .info .desc {
+    margin-top: 36px;
+    width: 100%;
+}
+
+.main .info .name {
+    color: black;
+    font-family: "ssans-b";
+    font-size: 18px;
+    margin-top: 4px;
+}
+
+.main .info .desc>div {
+    margin-top: 10px;
+}
+
+.main .info .price {
+    margin-top: 43px;
+}
+
+.main .info .price>* {
+    float: left;
+}
+
+.main .info .price>div {
+    color: #BB2649;
+    font-size: 24px;
+    line-height: 32px;
+    font-family: "ssans-b";
+}
+
+.main .intro .btn {
+    position: absolute;
+    display: block;
+    bottom: 72px;
+    width: 90px;
+    font-family: "ssans-b";
+    height: 36px;
+    border-radius: 18px;
+    background-color: #BB2649;
+    line-height: 36px;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+}
+
+/* 装饰 */
+.dec {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 110px;
+    width: 100%;
+}
+
+.dec .a1 {
+    width: 32%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: var(--body-bg);
+    overflow: hidden;
+    box-shadow: 1px 1px 50px rgba(0, 0, 0, .15);
+}
+
+.dec .a1 .title {
+    font-size: 18px;
+    line-height: 24px;
+    font-family: "ssans-b";
+    margin-top: 23px;
+    margin-left: 30px;
+}
+
+.dec .a1 .text {
+    font-size: 12px;
+    line-height: 16px;
+    width: 240px;
+    margin-left: 30px;
+    margin-top: 9px;
+}
+
+.add-nav .panel-car .but-card .dec {
+    transform: translateY(-24px);
+}

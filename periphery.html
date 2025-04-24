@@ -1,0 +1,1937 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>辽宁 · 非遗 - 传统文化精品</title>
+    <link rel="icon" href="images/badge.png">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/periphery.css">
+    <!-- 添加中国风古朴风格的CSS -->
+    <style>
+        /* 中国风古朴风格样式 */
+        :root {
+            --chinese-red: #9e2a2b;
+            --chinese-gold: #e6b89c;
+            --chinese-black: #1b1b1b;
+            --chinese-brown: #85603f;
+            --chinese-bg: #f9ebd7;
+            --chinese-green: #5e7340;
+            --chinese-blue: #3a5683;
+            --chinese-yellow: #c3a343;
+        }
+        
+        body {
+            background-color: var(--chinese-bg);
+            color: var(--chinese-black);
+            font-family: "楷体", "KaiTi", "STKaiti", serif;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20,20 L80,20 L80,80 L20,80 Z" fill="none" stroke="%23e6b89c" stroke-width="0.5" opacity="0.3"/></svg>');
+        }
+        
+        .banner {
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/wc/颜色.png');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3));
+            z-index: 1;
+        }
+        
+        .chinese-border {
+            border: 2px solid var(--chinese-gold);
+            box-shadow: 0 0 15px rgba(230, 184, 156, 0.3);
+            padding: 15px;
+            position: relative;
+            margin: 20px 0;
+        }
+        
+        .chinese-border::before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border: 1px solid var(--chinese-gold);
+            pointer-events: none;
+        }
+        
+        .chinese-title {
+            color: var(--chinese-red);
+            font-weight: bold;
+            text-align: center;
+            position: relative;
+            padding: 10px 0;
+        }
+        
+        .chinese-title::before,
+        .chinese-title::after {
+            content: "❖";
+            color: var(--chinese-gold);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .chinese-title::before {
+            left: 20px;
+        }
+        
+        .chinese-title::after {
+            right: 20px;
+        }
+        
+        .chinese-subtitle {
+            color: var(--chinese-brown);
+            text-align: center;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        
+        .chinese-button {
+            background-color: var(--chinese-red);
+            color: var(--chinese-bg);
+            border: none;
+            padding: 8px 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .chinese-button:hover {
+            background-color: var(--chinese-gold);
+            color: var(--chinese-black);
+        }
+        
+        .item {
+            background-color: rgba(249, 235, 215, 0.7);
+            border: 1px solid var(--chinese-gold);
+            transition: all 0.3s ease;
+        }
+        
+        .item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .item .intro {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .item .title {
+            color: var(--chinese-black);
+            font-weight: bold;
+            margin: 8px 0;
+            font-size: 1em;
+            line-height: 1.3;
+            height: 2.6em;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        
+        .item .sub {
+            color: var(--chinese-red);
+            font-size: 0.9em;
+        }
+        
+        .item .text {
+            color: var(--chinese-brown);
+            height: 2.5em;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            margin-bottom: 8px;
+        }
+        
+        .item .price {
+            margin: 5px 0 10px 0;
+        }
+        
+        .buy-btn {
+            background-color: var(--chinese-red);
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            border-radius: 3px;
+            text-align: center;
+        }
+        
+        .buy-btn:hover {
+            background-color: var(--chinese-gold);
+            color: var(--chinese-black);
+        }
+        
+        .car-btn {
+            background-color: var(--chinese-gold);
+            border: 1px solid var(--chinese-red);
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 5px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        .car-btn img {
+            width: 18px;
+            height: 18px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .artwork-gallery .item, 
+        #blocks-swapper .item, 
+        #drop-swapper .item {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .artwork-gallery .item .img, 
+        #blocks-swapper .item .img, 
+        #drop-swapper .item .img {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: #fff;
+            border-bottom: 1px solid var(--chinese-gold);
+        }
+        
+        .item .title, .item .sub, .item .text {
+            text-align: left;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .swapper {
+            position: relative;
+            margin: 20px 0;
+            padding: 10px 0;
+        }
+        
+        .left-btn, .right-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 40px;
+            height: 40px;
+            background-color: var(--chinese-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .left-btn {
+            left: -20px;
+        }
+        
+        .right-btn {
+            right: -20px;
+        }
+        
+        .left-btn img, .right-btn img {
+            width: 20px;
+            height: 20px;
+            filter: brightness(10);
+        }
+        
+        .left-btn img {
+            transform: rotate(90deg);
+        }
+        
+        .right-btn img {
+            transform: rotate(-90deg);
+        }
+        
+        #blocks-swapper .item, #drop-swapper .item {
+            min-width: 250px;
+            max-width: 300px;
+            flex: 0 0 auto;
+            margin-right: 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        /* 中国风装饰元素 */
+        .chinese-pattern {
+            height: 30px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M20 0 L40 20 L20 40 L0 20 Z" fill="none" stroke="%239e2a2b" stroke-width="1"/></svg>');
+            background-repeat: repeat-x;
+            margin: 20px 0;
+        }
+        
+        .chinese-cloud {
+            height: 30px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="30" viewBox="0 0 100 30"><path d="M10,25 Q20,5 30,15 Q40,25 50,15 Q60,5 70,15 Q80,25 90,15" fill="none" stroke="%23854442" stroke-width="1"/></svg>');
+            background-repeat: repeat-x;
+            margin: 20px 0;
+        }
+        
+        .chinese-seal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            background-color: var(--chinese-red);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            transform: rotate(15deg);
+            opacity: 0.8;
+            z-index: 10;
+        }
+        
+        .chinese-seal::before {
+            content: "非遗精品";
+            transform: rotate(-15deg);
+        }
+        
+        .section-divider {
+            display: flex;
+            align-items: center;
+            margin: 30px 0;
+        }
+        
+        .section-divider::before,
+        .section-divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid var(--chinese-gold);
+        }
+        
+        .section-divider-icon {
+            padding: 0 10px;
+            color: var(--chinese-red);
+            font-size: 1.2em;
+        }
+        
+        .head {
+            position: relative;
+            padding-top: 20px;
+        }
+        
+        .head .title {
+            color: var(--chinese-red);
+            font-weight: bold;
+        }
+        
+        .head .sub {
+            color: var(--chinese-brown);
+        }
+        
+        /* 新增中国传统元素样式 */
+        .dragon-corners {
+            position: relative;
+        }
+        
+        .dragon-corners::before,
+        .dragon-corners::after {
+            content: "〇";
+            font-size: 2em;
+            color: var(--chinese-red);
+            position: absolute;
+            opacity: 0.6;
+        }
+        
+        .dragon-corners::before {
+            top: 10px;
+            left: 10px;
+        }
+        
+        .dragon-corners::after {
+            bottom: 10px;
+            right: 10px;
+        }
+        
+        .traditional-wrapper {
+            background-color: rgba(249, 235, 215, 0.8);
+            border: 1px solid var(--chinese-brown);
+            padding: 20px;
+            position: relative;
+            margin: 30px 0;
+        }
+        
+        .traditional-wrapper::before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border: 1px dashed var(--chinese-gold);
+            pointer-events: none;
+        }
+        
+        .master-card {
+            display: flex;
+            position: relative;
+            z-index: 2;
+            margin: 20px 0 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid var(--chinese-gold);
+            overflow: hidden;
+        }
+        
+        .master-card .avatar {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-right: 1px solid var(--chinese-gold);
+        }
+        
+        .master-card .info {
+            padding: 15px;
+            flex: 1;
+        }
+        
+        .master-card .name {
+            font-size: 1.5em;
+            color: var(--chinese-red);
+            border-bottom: 1px solid var(--chinese-gold);
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .master-card .skill {
+            font-size: 1.1em;
+            color: var(--chinese-brown);
+            margin-bottom: 10px;
+        }
+        
+        .master-card .description {
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        
+        .artwork-gallery {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px !important;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .artwork-gallery .item {
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            min-width: 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .banner .type-area {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        /* 修复图片过大导致排版错乱的问题 */
+        /* 控制所有图片大小 */
+        img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        /* 限制服务部分的图片大小 */
+        .services .item .img {
+            max-height: 200px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* 限制非遗定制作品部分的图片大小 */
+        .show .img {
+            max-height: 400px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* 控制商品项目的图片大小 */
+        .item .img {
+            height: 220px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* 控制横向滚动区域的宽度和布局 */
+        .swapper-container {
+            position: relative;
+            padding: 0 40px;
+            overflow: hidden !important;
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        #blocks-swapper, #drop-swapper {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 20px;
+        }
+        
+        /* 修复响应式布局问题 */
+        @media (max-width: 768px) {
+            .master-section .traditional-wrapper,
+            .custom-section .traditional-wrapper,
+            .popular-section .traditional-wrapper {
+                border-radius: 10px;
+                margin: 15px;
+            }
+            
+            .master-section .artwork-gallery,
+            .popular-section .artwork-gallery {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .master-section .artwork-gallery .item,
+            .popular-section .artwork-gallery .item {
+                margin-bottom: 15px;
+            }
+            
+            .master-card {
+                flex-direction: column;
+            }
+            
+            .master-card .avatar {
+                width: 100%;
+                max-height: 200px;
+                border-right: none;
+                border-bottom: 1px solid var(--chinese-gold);
+            }
+            
+            .artwork-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+        
+        /* 修复红衣服和banner图片比例 */
+        .red-cloth {
+            max-height: 350px;
+            object-fit: contain;
+        }
+        
+        /* 确保轮播正常工作 */
+        #blocks-swapper, #drop-swapper {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        
+        #blocks-swapper .item, #drop-swapper .item {
+            min-width: 250px;
+            margin-right: 15px;
+            flex: 0 0 auto;
+        }
+        
+        /* 确保火箭玩具图片正确显示 */
+        #blocks-swapper .item .img img,
+        #drop-swapper .item .img img {
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        
+        #blocks-swapper .item:hover .img img,
+        #drop-swapper .item:hover .img img {
+            transform: translateY(-5px);
+        }
+        
+        /* 修复底部装饰 */
+        .dec {
+            position: relative;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        
+        .red-tag, .blue-tag {
+            max-width: 120px;
+            position: absolute;
+        }
+        
+        .red-tag {
+            top: 0;
+            left: 10px;
+        }
+        
+        .blue-tag {
+            top: 10px;
+            right: 10px;
+        }
+        
+        /* 新增标题区域样式 */
+        .section-title-area {
+            text-align: center;
+            margin: 40px auto 30px;
+            position: relative;
+            padding-bottom: 20px;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .section-title-area .chinese-subtitle {
+            color: var(--chinese-brown);
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+            padding: 0 30px;
+        }
+        
+        .section-title-area .chinese-subtitle::before,
+        .section-title-area .chinese-subtitle::after {
+            content: "•";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--chinese-gold);
+        }
+        
+        .section-title-area .chinese-subtitle::before {
+            left: 10px;
+        }
+        
+        .section-title-area .chinese-subtitle::after {
+            right: 10px;
+        }
+        
+        .section-title-area .chinese-title {
+            color: var(--chinese-red);
+            font-size: 2em;
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            padding: 5px 15px;
+        }
+        
+        .section-title-area .chinese-title::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid var(--chinese-gold);
+            border-left: 2px solid var(--chinese-gold);
+        }
+        
+        .section-title-area .chinese-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            border-bottom: 2px solid var(--chinese-gold);
+            border-right: 2px solid var(--chinese-gold);
+        }
+        
+        .section-title-area .text {
+            color: var(--chinese-brown);
+            max-width: 600px;
+            margin: 0 auto 15px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        .title-decoration {
+            margin: 15px auto 0;
+            width: 120px;
+            height: 15px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="15" viewBox="0 0 100 15"><path d="M10,7.5 L20,2 L30,7.5 L40,2 L50,7.5 L60,2 L70,7.5 L80,2 L90,7.5" fill="none" stroke="%239e2a2b" stroke-width="1"/></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            position: relative;
+        }
+        
+        .title-decoration::before,
+        .title-decoration::after {
+            content: "✦";
+            position: absolute;
+            color: var(--chinese-gold);
+            font-size: 0.8em;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .title-decoration::before {
+            left: 10px;
+        }
+        
+        .title-decoration::after {
+            right: 10px;
+        }
+        
+        /* 多元化板块样式 */
+        .traditional-wrapper {
+            transition: all 0.3s ease;
+        }
+        
+        /* 第一板块：传承人推荐 - 经典方正风格 */
+        .master-section .traditional-wrapper {
+            border-radius: 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-image: linear-gradient(to bottom, rgba(249, 235, 215, 0.9), rgba(249, 235, 215, 0.7));
+        }
+        
+        /* 第二板块：非遗定制 - 圆角现代风格 */
+        .custom-section .traditional-wrapper {
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(158, 42, 43, 0.1);
+            background-image: linear-gradient(to right, rgba(249, 235, 215, 0.8), rgba(230, 184, 156, 0.2));
+            overflow: hidden;
+        }
+        
+        /* 第三板块：热门非遗 - 半圆混合风格 */
+        .popular-section .traditional-wrapper {
+            border-radius: 0 20px 0 20px;
+            box-shadow: 0 10px 25px rgba(133, 96, 63, 0.15);
+            background-image: linear-gradient(45deg, rgba(249, 235, 215, 0.9), rgba(249, 235, 215, 0.6));
+        }
+        
+        /* 第四板块：服务部分 - 柔和圆角风格 */
+        .service .item {
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+        
+        .service .item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(158, 42, 43, 0.15);
+        }
+        
+        /* 多元化展示卡片 */
+        .artwork-gallery .item {
+            transition: all 0.3s ease;
+        }
+        
+        /* 传承人板块卡片 */
+        .master-section .artwork-gallery .item {
+            border-radius: 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .master-section .artwork-gallery .item:hover {
+            box-shadow: 0 8px 20px rgba(158, 42, 43, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        /* 定制作品板块卡片 */
+        .custom-section #blocks-swapper .item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .custom-section #blocks-swapper .item:hover {
+            box-shadow: 0 10px 25px rgba(158, 42, 43, 0.15);
+        }
+        
+        /* 热门非遗板块卡片 */
+        .popular-section #drop-swapper .item {
+            border-radius: 0 10px 10px 0;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 3px solid var(--chinese-red);
+        }
+        
+        .popular-section #drop-swapper .item:hover {
+            box-shadow: 0 10px 25px rgba(158, 42, 43, 0.15);
+        }
+        
+        /* 多元化装饰元素 */
+        .master-card {
+            border-radius: 0;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .master-section .master-card {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .master-section .master-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--chinese-red), var(--chinese-gold));
+        }
+        
+        .popular-section .master-card {
+            border-radius: 0 15px 15px 0;
+            border-left: 3px solid var(--chinese-red);
+        }
+        
+        /* 按钮装饰 */
+        .buy-btn {
+            border-radius: 20px;
+            overflow: hidden;
+            padding: 5px 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .buy-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .car-btn {
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .car-btn:hover {
+            transform: rotate(10deg);
+        }
+        
+        /* 圆角导航按钮 */
+        .left-btn, .right-btn {
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .left-btn:hover, .right-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(158, 42, 43, 0.3);
+        }
+        
+        /* 多元化标题样式 */
+        .master-section .section-title-area .chinese-title::before,
+        .master-section .section-title-area .chinese-title::after {
+            border-radius: 0;
+        }
+        
+        .custom-section .section-title-area .chinese-title::before,
+        .custom-section .section-title-area .chinese-title::after {
+            border-radius: 5px;
+        }
+        
+        .popular-section .section-title-area .chinese-title::before,
+        .popular-section .section-title-area .chinese-title::after {
+            border-radius: 0 5px 0 5px;
+        }
+        
+        .service .section-title-area .chinese-title::before,
+        .service .section-title-area .chinese-title::after {
+            border-radius: 50%;
+        }
+        
+        /* 额外装饰元素 */
+        .master-section .traditional-wrapper::after {
+            content: "";
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 120px;
+            height: 120px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"><path d="M30,30 L90,30 L90,90 L30,90 Z" fill="none" stroke="%239e2a2b" stroke-width="2" opacity="0.15"/></svg>');
+            background-repeat: no-repeat;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .custom-section .traditional-wrapper::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="35" fill="none" stroke="%23e6b89c" stroke-width="2" opacity="0.2"/></svg>');
+            background-repeat: no-repeat;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .popular-section .traditional-wrapper::after {
+            content: "";
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            width: 100px;
+            height: 100px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20,20 L80,20 L80,80 L20,80 Z" fill="none" stroke="%239e2a2b" stroke-width="1.5" stroke-dasharray="5,5" opacity="0.15"/></svg>');
+            background-repeat: no-repeat;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        /* 边角装饰 */
+        .master-section .artwork-gallery .item::before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 15px;
+            height: 15px;
+            border-top: 2px solid var(--chinese-gold);
+            border-left: 2px solid var(--chinese-gold);
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .custom-section #blocks-swapper .item::after {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 15px;
+            height: 15px;
+            border-bottom: 2px solid var(--chinese-gold);
+            border-right: 2px solid var(--chinese-gold);
+            border-radius: 0 0 5px 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        /* 动态效果增强 */
+        .master-section .artwork-gallery .item,
+        .custom-section #blocks-swapper .item,
+        .popular-section #drop-swapper .item,
+        .service .item {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .master-section .artwork-gallery .item::after,
+        .custom-section #blocks-swapper .item::before,
+        .popular-section #drop-swapper .item::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--chinese-gold), var(--chinese-red), var(--chinese-gold));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+            z-index: 1;
+        }
+        
+        .master-section .artwork-gallery .item:hover::after,
+        .custom-section #blocks-swapper .item:hover::before,
+        .popular-section #drop-swapper .item:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .service .item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(230, 184, 156, 0.1), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .service .item:hover::before {
+            opacity: 1;
+        }
+        
+        /* 调整图片容器样式，使其适应多元化设计 */
+        .master-section .artwork-gallery .item .img {
+            border-bottom: 1px solid var(--chinese-gold);
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .custom-section #blocks-swapper .item .img {
+            border-bottom: 1px dashed var(--chinese-gold);
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .popular-section #drop-swapper .item .img {
+            border-bottom: 2px solid rgba(158, 42, 43, 0.2);
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .service .item .img {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px 12px 0 0;
+        }
+        
+        .service .item .img img {
+            transition: transform 0.5s ease;
+        }
+        
+        .service .item:hover .img img {
+            transform: scale(1.05);
+        }
+        
+        /* 修复样式冲突和内容覆盖问题 */
+        .traditional-wrapper {
+            position: relative;
+            z-index: 1;
+            overflow: visible !important;
+        }
+        
+        .swapper-container {
+            overflow: visible !important;
+            padding: 0 30px 20px !important;
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+            overflow: visible;
+        }
+        
+        #blocks-swapper .item, #drop-swapper .item {
+            min-width: 250px;
+            flex: 0 0 auto;
+            margin-right: 0 !important;
+            position: relative;
+            z-index: 3;
+        }
+        
+        .left-btn, .right-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 4;
+            width: 40px;
+            height: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .left-btn {
+            left: -15px;
+        }
+        
+        .right-btn {
+            right: -15px;
+        }
+        
+        /* 确保图片容器高度一致 */
+        .item .img {
+            height: 220px !important;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .item .img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        /* 确保卡片内容区域不被覆盖 */
+        .item .intro {
+            position: relative;
+            z-index: 2;
+            background-color: rgba(249, 235, 215, 0.95);
+            padding: 15px !important;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* 修复定制区域的滚动和展示问题 */
+        .custom-section #blocks-swapper,
+        .popular-section #drop-swapper {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* 移动端优化 */
+        @media (max-width: 768px) {
+            .swapper-container {
+                padding: 0 15px 15px !important;
+            }
+            
+            .left-btn, .right-btn {
+                width: 30px;
+                height: 30px;
+            }
+            
+            .left-btn {
+                left: -10px;
+            }
+            
+            .right-btn {
+                right: -10px;
+            }
+            
+            .item .img {
+                height: 180px !important;
+            }
+        }
+        
+        /* 为不同区域设置合理的内边距 */
+        .traditional-wrapper {
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        /* 修复z-index层级关系 */
+        .traditional-wrapper {
+            z-index: 1;
+        }
+        
+        .swapper {
+            z-index: 2;
+        }
+        
+        .swapper-container {
+            z-index: 3;
+        }
+        
+        .container {
+            z-index: 4;
+        }
+        
+        .item {
+            z-index: 5;
+        }
+        
+        .left-btn, .right-btn {
+            z-index: 10;
+        }
+        
+        /* 自定义区域样式优化 */
+        .custom-section .img img,
+        .popular-section .img img {
+            max-height: 180px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        
+        /* 确保轮播区域内的图片不变形 */
+        .show .img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+            max-height: 400px;
+            overflow: hidden;
+        }
+        
+        .show .img img {
+            max-width: 100%;
+            max-height: 350px;
+            object-fit: contain;
+        }
+        
+        /* 解决滚动和视图问题 */
+        .swapper-container {
+            overflow-x: hidden !important;
+            position: relative;
+            padding: 0 40px;
+        }
+        
+        /* 确保卡片容器不溢出 */
+        .item {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        
+        .item .intro {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+        }
+        
+        /* 调整轮播导航箭头位置，确保可见且不覆盖内容 */
+        .swapper {
+            padding: 20px 0;
+        }
+        
+        .left-btn {
+            left: 0px;
+        }
+        
+        .right-btn {
+            right: 0px;
+        }
+        
+        /* 进一步调整非遗定制区域样式，解决覆盖问题 */
+        #blocks-swapper .item {
+            border: 1px solid var(--chinese-gold);
+            background-color: rgba(249, 235, 215, 0.7);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 10px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        #blocks-swapper .item .img {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        
+        #blocks-swapper .item .intro {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(249, 235, 215, 0.9);
+        }
+        
+        #blocks-swapper .item .title {
+            color: var(--chinese-black);
+            font-weight: bold;
+            margin: 8px 0;
+            font-size: 1em;
+            line-height: 1.3;
+            height: 2.6em;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        
+        #blocks-swapper .item .text {
+            color: var(--chinese-brown);
+            margin-bottom: 8px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        
+        /* 确保滚动组件内容不会重叠 */
+        .swapper .container {
+            position: relative;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 20px;
+        }
+        
+        /* 修复轮播箭头在移动端的位置 */
+        @media (max-width: 768px) {
+            .left-btn {
+                left: 5px;
+            }
+            
+            .right-btn {
+                right: 5px;
+            }
+            
+            #blocks-swapper .item,
+            #drop-swapper .item {
+                min-width: 220px;
+                max-width: 260px;
+            }
+        }
+        
+        /* 热门非遗区域样式优化 */
+        #drop-swapper .item {
+            border: 1px solid var(--chinese-gold);
+            background-color: rgba(249, 235, 215, 0.7);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 10px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border-left: 3px solid var(--chinese-red);
+        }
+        
+        #drop-swapper .item .img {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        
+        #drop-swapper .item .intro {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(249, 235, 215, 0.9);
+        }
+        
+        /* 修复服务区域的卡片样式 */
+        .services .item {
+            flex: 1;
+            min-width: 0;
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+        }
+        
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+            }
+            
+            .services .item {
+                margin: 10px 0;
+            }
+        }
+        
+        /* 查看更多按钮样式 */
+        .view-more-btn {
+            text-align: center;
+            margin: 20px auto;
+            display: block;
+            padding: 10px 30px;
+            background-color: var(--chinese-red);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(158, 42, 43, 0.2);
+            border-radius: 4px;
+            font-family: "楷体", "KaiTi", "STKaiti", serif;
+            font-size: 1.1em;
+        }
+        
+        .view-more-btn:hover {
+            background-color: var(--chinese-gold);
+            color: var(--chinese-black);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(158, 42, 43, 0.3);
+        }
+        
+        .view-more-btn::before, 
+        .view-more-btn::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            opacity: 0.3;
+        }
+        
+        .view-more-btn::before {
+            top: 5px;
+            left: 5px;
+            border-top: 2px solid #fff;
+            border-left: 2px solid #fff;
+        }
+        
+        .view-more-btn::after {
+            bottom: 5px;
+            right: 5px;
+            border-bottom: 2px solid #fff;
+            border-right: 2px solid #fff;
+        }
+        
+        .view-more-container {
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fill-top"></div>
+    <div class="banner">
+        <div class="chinese-pattern"></div>
+        <div class="type-area">
+            <div class="margin-fix"></div>
+            <div class="chinese-subtitle">辽宁省非物质文化遗产</div>
+            <div class="chinese-title">
+                传承千年匠心<br>
+                非遗文化精品展
+            </div>
+            <div class="text" id="banner-text">弘扬传统文化，守护非遗技艺</div>
+            <div class="corn-more">
+                <div class="corn-dec"></div>
+                <a id="abb-more" class="chinese-button">探索非遗</a>
+            </div>
+            <div class="abbs">
+                <div class="abb chinese-border" onclick="ManualSwapping(0)">
+                        <div class="img">
+                        <img src="images/wc/logos.png" alt="img">
+                        </div>
+                    <div class="text">辽宁省传承人推荐</div>
+                        <div class="bar">
+                            <div class="base"></div>
+                            <div class="prog"></div>
+                        </div>
+                    </div>
+                <div class="abb chinese-border" onclick="ManualSwapping(1)">
+                        <div class="img">
+                        <img src="images/wc/颜色.png" alt="img">
+                        </div>
+                    <div class="text">非遗定制作品</div>
+                        <div class="bar">
+                            <div class="base"></div>
+                            <div class="prog"></div>
+                        </div>
+                    </div>
+                <div class="abb chinese-border" onclick="ManualSwapping(2)">
+                        <div class="img">
+                        <img src="images/wc/ip.png" alt="img">
+                        </div>
+                    <div class="text">热门非遗</div>
+                        <div class="bar">
+                            <div class="base"></div>
+                            <div class="prog"></div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="type-area" id="clothing">
+        <!-- 第一板块：辽宁省传承人推荐 -->
+        <section class="master-section" id="masters">
+            <div class="margin-fix"></div>
+            <div class="section-divider">
+                <div class="section-divider::before"></div>
+                <span class="section-divider-icon">✦</span>
+                <div class="section-divider::after"></div>
+            </div>
+            <div class="section-title-area">
+                <div class="chinese-subtitle">技艺匠人</div>
+                <div class="chinese-title">辽宁省传承人推荐</div>
+                <div class="title-decoration"></div>
+                </div>
+            <div class="chinese-cloud"></div>
+            
+            <div class="traditional-wrapper dragon-corners">
+                <div class="chinese-seal"></div>
+                <div class="master-card" style="margin-bottom: 30px;">
+                    <img src="images/wc/红衣服.png" alt="传承人作品" class="avatar">
+                    <div class="info">
+                        <div class="name">张明德</div>
+                        <div class="skill">辽宁剪纸技艺传承人</div>
+                        <div class="description" style="line-height: 1.6;">
+                            张明德，辽宁省级非物质文化遗产代表性传承人，从事剪纸艺术创作40余年，作品曾多次获得国家级奖项。其剪纸技法融合了辽宁地方特色，以精湛的刀工和独特的构图著称，作品多表现东北民俗风情和自然景观。
+                            
+                            张明德的剪纸艺术注重传统与创新的结合，擅长运用阴刻、阳刻等多种技法，将辽宁地区的历史文化、民间传说和自然风光融入作品中。他坚持手工创作，每件作品都凝聚着对传统文化的敬意与热爱。
+                    </div>
+                </div>
+            </div>
+                
+                <div class="artwork-gallery" style="display: flex; gap: 20px; margin-bottom: 40px;">
+                    <div class="item chinese-border" style="flex: 1; min-width: 0;">
+                            <div class="img">
+                            <img src="images/wc/袋子.png" alt="剪纸作品">
+                            </div>
+                        <div class="intro" style="padding: 15px;">
+                            <div class="sub" style="margin-bottom: 10px;">代表作品</div>
+                            <div class="title" style="margin-bottom: 10px; font-weight: bold;">
+                                《东北农家喜》剪纸艺术
+                                </div>
+                            <div class="text" style="color: #666;">
+                                纯手工传统剪纸艺术，展现东北农村喜庆场景，色彩鲜艳，构图饱满...
+                                </div>
+                                </div>
+                            </div>
+                    <div class="item chinese-border" style="flex: 1; min-width: 0;">
+                            <div class="img">
+                            <img src="images/wc/衣服.png" alt="剪纸作品">
+                            </div>
+                        <div class="intro" style="padding: 15px;">
+                            <div class="sub" style="margin-bottom: 10px;">经典系列</div>
+                            <div class="title" style="margin-bottom: 10px; font-weight: bold;">
+                                《辽河印象》系列剪纸
+                                </div>
+                            <div class="text" style="color: #666;">
+                                融合辽宁地域特色的精美剪纸艺术，以辽河流域的自然风光...
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                <div class="master-card">
+                    <img src="images/wc/灰衣服.png" alt="传承人照片" class="avatar">
+                    <div class="info">
+                        <div class="name">李秀芝</div>
+                        <div class="skill">辽宁绢人技艺传承人</div>
+                        <div class="description" style="line-height: 1.6;">
+                            李秀芝，辽宁省级非物质文化遗产代表性传承人，从事绢人制作35年，掌握了传统绢人制作的全部工艺流程。其作品色彩艳丽，形象生动，细节精致，被誉为"指尖上的艺术"。作品多表现民间生活场景和历史人物形象。
+                            
+                            李秀芝的绢人制作技艺包括制胎、穿衣、梳头、描绘面容等二十多道工序，每个环节都一丝不苟。她特别注重对徒弟的培养，希望这门古老的技艺能够代代相传，让更多人了解和喜爱绢人艺术。
+                            </div>
+                                </div>
+                                </div>
+                
+                <div class="artwork-gallery" style="display: flex; gap: 20px; margin-top: 30px;">
+                    <div class="item chinese-border" style="flex: 1; min-width: 0;">
+                            <div class="img">
+                            <img src="images/wc/大衣服.png" alt="绢人作品">
+                            </div>
+                        <div class="intro" style="padding: 15px;">
+                            <div class="sub" style="margin-bottom: 10px;">传统工艺</div>
+                            <div class="title" style="margin-bottom: 10px; font-weight: bold;">
+                                《东北秧歌》绢人艺术摆件
+                                </div>
+                            <div class="text" style="color: #666;">
+                                纯手工打造的绢人艺术品，生动展现东北秧歌表演场景...
+                                </div>
+                                </div>
+                            </div>
+                    <div class="item chinese-border" style="flex: 1; min-width: 0;">
+                            <div class="img">
+                            <img src="images/wc/htyf.png" alt="绢人作品">
+                            </div>
+                        <div class="intro" style="padding: 15px;">
+                            <div class="sub" style="margin-bottom: 10px;">系列作品</div>
+                            <div class="title" style="margin-bottom: 10px; font-weight: bold;">
+                                《辽宁风情》绢人艺术组合
+                                </div>
+                            <div class="text" style="color: #666;">
+                                展现辽宁地方特色的绢人艺术品，以辽宁民间生活和传统节日为主题...
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            <div class="fill-div"></div>
+            
+            <div class="view-more-container">
+                <button class="view-more-btn">查看更多传承人</button>
+            </div>
+        </section>
+        
+        <!-- 第二板块：非遗定制作品 -->
+        <section class="custom-section" id="custom">
+            <div class="margin-fix"></div>
+            <div class="section-divider">
+                <div class="section-divider::before"></div>
+                <span class="section-divider-icon">✦</span>
+                <div class="section-divider::after"></div>
+            </div>
+            <div class="section-title-area">
+                <div class="chinese-subtitle">匠心独运</div>
+                <div class="chinese-title">非遗定制作品</div>
+                <div class="title-decoration"></div>
+            </div>
+            <div class="chinese-cloud"></div>
+            
+            <div class="show chinese-border">
+                <div class="tag">私人定制</div>
+                            <div class="img">
+                    <img src="images/wc/长征一号.png" alt="img" class="red-cloth">
+                            </div>
+                            <div class="intro">
+                    <div class="chinese-subtitle">Personalized Art</div>
+                    <div class="chinese-title">
+                        非遗定制<br>
+                        属于您的独一无二艺术品
+                                </div>
+                    <div class="text">根据您的需求量身定制，传统工艺与现代设计完美结合</div>
+                                </div>
+                                </div>
+            
+            <div class="traditional-wrapper dragon-corners">
+                <div class="swapper">
+                    <div class="swapper-container">
+                        <div class="container" id="blocks-swapper">
+                            <div class="item chinese-border">
+                            <div class="img">
+                                    <img src="images/wc/htjm3.png" alt="定制作品">
+                            </div>
+                            <div class="intro">
+                                <div class="dec"></div>
+                                    <div class="sub">私人定制</div>
+                                <div class="title">
+                                        辽宁风格传统纹样雕刻定制印章
+                                </div>
+                                <div class="text">
+                                        传统印章工艺，个性化雕刻定制
+                                </div>
+                                    <div class="price">￥388起</div>
+                                    <div class="action-buttons">
+                                <div class="car-btn">
+                                            <img src="icons/gouwuche-2.png" alt="icon">
+                                </div>
+                                        <div class="buy-btn">立即定制</div>
+                            </div>
+                        </div>
+                            </div>
+                            <div class="item chinese-border">
+                            <div class="img">
+                                    <img src="images/wc/htjm2.png" alt="定制作品">
+                            </div>
+                            <div class="intro">
+                                <div class="dec"></div>
+                                    <div class="sub">私人定制</div>
+                                <div class="title">
+                                        辽宁传统布艺定制家居装饰
+                                </div>
+                                <div class="text">
+                                        融合传统布艺工艺与现代家居美学
+                                </div>
+                                    <div class="price">￥680起</div>
+                                    <div class="action-buttons">
+                                <div class="car-btn">
+                                            <img src="icons/gouwuche-2.png" alt="icon">
+                                </div>
+                                        <div class="buy-btn">立即定制</div>
+                            </div>
+                        </div>
+                            </div>
+                            <div class="item chinese-border">
+                            <div class="img">
+                                    <img src="images/wc/htjm1.png" alt="定制作品">
+                            </div>
+                            <div class="intro">
+                                <div class="dec"></div>
+                                    <div class="sub">私人定制</div>
+                                <div class="title">
+                                        辽宁地方风格漆器定制摆件
+                                </div>
+                                <div class="text">
+                                        传统漆器工艺，精美绝伦
+                                </div>
+                                    <div class="price">￥1280起</div>
+                                    <div class="action-buttons">
+                                <div class="car-btn">
+                                            <img src="icons/gouwuche-2.png" alt="icon">
+                                </div>
+                                        <div class="buy-btn">立即定制</div>
+                            </div>
+                        </div>
+                            </div>
+                            <div class="item chinese-border">
+                            <div class="img">
+                                    <img src="images/wc/htjm.png" alt="定制作品">
+                            </div>
+                            <div class="intro">
+                                <div class="dec"></div>
+                                    <div class="sub">私人定制</div>
+                                <div class="title">
+                                        辽宁民间刺绣定制礼品
+                                </div>
+                                <div class="text">
+                                        传承百年刺绣技艺，精美礼品定制
+                                </div>
+                                    <div class="price">￥880起</div>
+                                    <div class="action-buttons">
+                                <div class="car-btn">
+                                            <img src="icons/gouwuche-2.png" alt="icon">
+                                </div>
+                                        <div class="buy-btn">立即定制</div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="left-btn" style="display: none;" onclick="GoLeftBlocks()">
+                        <img src="icons/totop.png" alt="icon">
+                </div>
+                <div class="right-btn" onclick="GoRightBlocks()">
+                        <img src="icons/totop.png" alt="icon">
+                </div>
+            </div>
+            <div class="fill-div"></div>
+            
+            <div class="view-more-container">
+                <button class="view-more-btn">查看更多定制作品</button>
+            </div>
+            </div>
+        </section>
+        
+        <!-- 第三板块：热门非遗 -->
+        <section class="popular-section" id="popular">
+            <div class="margin-fix"></div>
+            <div class="section-divider">
+                <div class="section-divider::before"></div>
+                <span class="section-divider-icon">✦</span>
+                <div class="section-divider::after"></div>
+                </div>
+            <div class="section-title-area">
+                <div class="chinese-subtitle">跨越千年</div>
+                <div class="chinese-title">热门非遗</div>
+                <div class="text">传承千年技艺，探索辽宁地区最受欢迎的非物质文化遗产</div>
+                <div class="title-decoration"></div>
+            </div>
+            
+            <div class="traditional-wrapper dragon-corners">
+                <div class="dec chinese-border">
+                <div class="red-tag">
+                        <img src="images/wc/Name tag 1.png" alt="非遗标志">
+                </div>
+                <div class="blue-tag">
+                        <img src="images/wc/Name tag 2.png" alt="非遗标志">
+                </div>
+            </div>
+                
+            <div class="swapper">
+                <div class="swapper-container">
+                    <div class="container" id="drop-swapper">
+                            <div class="item chinese-border">
+                            <div class="img">
+                                    <img src="images/wc/card.png" alt="非遗作品">
+                            </div>
+                            <div class="intro">
+                                <div class="dec"></div>
+                                    <div class="sub">热门非遗</div>
+                                <div class="title">
+                                        辽宁皮影戏《猴闹天宫》套装
+                                </div>
+                                <div class="text">
+                                        传统皮影戏角色套装，附演出说明书
+                                </div>
+                                    <div class="price">￥380</div>
+                                    <div class="action-buttons">
+                                <div class="car-btn">
+                                            <img src="icons/gouwuche-2.png" alt="icon">
+                                </div>
+                                <div class="buy-btn">立即购买</div>
+                            </div>
+                        </div>
+                            </div>
+                            <div class="item chinese-border">
+                            <div class="img">
+                                    <img src="images/wc/cardkey.png" alt="非遗作品">
+                            </div>
+                            <div class="intro">
+                                <div class="dec"></div>
+                                    <div class="sub">热门非遗</div>
+                                <div class="title">
+                                        辽宁铁艺《八卦钥匙扣》精品套装
+                                </div>
+                                <div class="text">
+                                        传统铁艺锻造，精美文化礼品
+                                </div>
+                                    <div class="price">￥168</div>
+                                    <div class="action-buttons">
+                                <div class="car-btn">
+                                            <img src="icons/gouwuche-2.png" alt="icon">
+                                </div>
+                                <div class="buy-btn">立即购买</div>
+                            </div>
+                        </div>
+                            </div>
+                            <div class="item chinese-border">
+                            <div class="img">
+                                    <img src="images/wc/dp.png" alt="非遗作品">
+                            </div>
+                            <div class="intro">
+                                <div class="dec"></div>
+                                    <div class="sub">热门非遗</div>
+                                <div class="title">
+                                        辽宁剪纸《四季风情》装饰画
+                                </div>
+                                <div class="text">
+                                        传统剪纸工艺，精美装饰画
+                                </div>
+                                    <div class="price">￥298</div>
+                                    <div class="action-buttons">
+                                <div class="car-btn">
+                                            <img src="icons/gouwuche-2.png" alt="icon">
+                                </div>
+                                <div class="buy-btn">立即购买</div>
+                            </div>
+                        </div>
+                    </div>
+                            <div class="item chinese-border">
+                <div class="img">
+                                    <img src="images/wc/htlogo2.png" alt="非遗作品">
+                            </div>
+                            <div class="intro">
+                                <div class="dec"></div>
+                                    <div class="sub">热门非遗</div>
+                                <div class="title">
+                                        辽宁陶艺《东北风情》茶具套装
+                                </div>
+                                <div class="text">
+                                        传统陶艺工艺，精美茶具套装
+                                </div>
+                                    <div class="price">￥580</div>
+                                    <div class="action-buttons">
+                                <div class="car-btn">
+                                            <img src="icons/gouwuche-2.png" alt="icon">
+                                </div>
+                                <div class="buy-btn">立即购买</div>
+                            </div>
+                        </div>
+                            </div>
+                                </div>
+                                </div>
+                    <div class="left-btn" style="display: none;" onclick="GoLeftDrop()">
+                        <img src="icons/totop.png" alt="icon">
+                                </div>
+                    <div class="right-btn" onclick="GoRightDrop()">
+                        <img src="icons/totop.png" alt="icon">
+                </div>
+            </div>
+            <div class="fill-div"></div>
+            
+            <div class="view-more-container">
+                <button class="view-more-btn">查看更多非遗作品</button>
+            </div>
+                </div>
+            
+            <div class="chinese-pattern"></div>
+        </section>
+        
+        <!-- 服务部分 -->
+        <section class="service" id="services">
+            <div class="margin-fix"></div>
+            <div class="section-divider">
+                <div class="section-divider::before"></div>
+                <span class="section-divider-icon">✦</span>
+                <div class="section-divider::after"></div>
+                </div>
+            <div class="section-title-area">
+                <div class="chinese-subtitle">匠心服务</div>
+                <div class="chinese-title">非遗服务</div>
+                <div class="title-decoration"></div>
+            </div>
+            <div class="services">
+                <div class="item chinese-border">
+                    <div class="img">
+                        <img src="images/wc/lihe.png" alt="pic">
+                        <div class="before"></div>
+                        <img src="icons/liwuhuodong-2.png" alt="icon" class="icon">
+                        <div class="b-title">
+                            非遗文化定制
+                        </div>
+                        <div class="b-text">
+                            提供个性化非遗作品定制服务，满足您的独特需求
+                        </div>
+                    </div>
+                    <div class="title">非遗文化个性化定制</div>
+                    <div class="text">
+                        提供个性化非遗作品定制服务，满足您的独特需求
+                    </div>
+                </div>
+                <div class="item chinese-border">
+                    <div class="img">
+                        <img src="images/wc/car.png" alt="pic">
+                        <div class="before"></div>
+                        <img src="icons/dingzhi-3.png" alt="icon" class="icon">
+                        <div class="b-title">
+                            非遗体验课程
+                        </div>
+                        <div class="b-text">
+                            提供各类非遗技艺体验课程，亲身感受传统工艺的魅力
+                        </div>
+                    </div>
+                    <div class="title">非遗体验课程</div>
+                    <div class="text">
+                        提供各类非遗技艺体验课程，亲身感受传统工艺的魅力
+                    </div>
+                </div>
+                <div class="item chinese-border">
+                    <div class="img">
+                        <img src="images/wc/dzyj.png" alt="pic">
+                        <div class="before"></div>
+                        <img src="icons/guojiwuliu-2.png" alt="icon" class="icon">
+                        <div class="b-title">
+                            非遗研学旅行
+                        </div>
+                        <div class="b-text">
+                            组织非遗研学旅行，探访传承人工作室，深入了解非遗文化
+                        </div>
+                    </div>
+                    <div class="title">非遗研学旅行</div>
+                    <div class="text">
+                        组织非遗研学旅行，探访传承人工作室，深入了解非遗文化
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-more-container">
+                <button class="view-more-btn">了解更多服务</button>
+            </div>
+            
+            <!-- 页脚中国风装饰 -->
+            <div class="chinese-pattern"></div>
+            <div class="fill-div" id="fill-bottom-div"></div>
+        </section>
+    </div>
+</body>
+
+</html>
+
+<script src="js/global.js"></script>
+<script src="js/periphery.js"></script>
